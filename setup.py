@@ -1,10 +1,10 @@
 from setuptools import setup
 
-APP = ['myscript.py']
+APP = ['gui.py']  # указываем твой скрипт
 OPTIONS = {
     'argv_emulation': True,
-    # 'iconfile': 'myicon.icns',  # если хочешь иконку
-    'arch': 'universal2',  # создаст приложение для Intel + ARM
+    'iconfile': None,
+    'arch': 'universal2',  # поддержка Intel и ARM
 }
 
 setup(
