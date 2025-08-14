@@ -2,15 +2,14 @@ name: Build macOS app
 
 on:
   push:
-    branches: [ main ]  # при пуше в main ветку
-
+    branches: [ main ] 
 jobs:
   build:
     runs-on: macos-latest
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -18,13 +17,16 @@ jobs:
         python-version: '3.11'
 
     - name: Install dependencies
-      run: pip install py2app
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install py2app
 
     - name: Build macOS app
       run: python setup.py py2app
 
     - name: Upload .app as artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: MyMacApp
         path: dist/
