@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import os
 import time
 import tkinter as tk
@@ -1340,4 +1340,4 @@ if __name__ == "__main__":
     root = tk.Tk()
     app = ExifParserGUI(root)
     root.mainloop()
->>>>>>> b192247 (Initial commit)
+
